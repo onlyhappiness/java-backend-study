@@ -3,6 +3,7 @@ package com.example.demo.registration;
 import com.example.demo.appuser.AppUser;
 import com.example.demo.appuser.AppUserRole;
 import com.example.demo.appuser.AppUserService;
+import com.example.demo.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ public class RegistrationService {
 
     private final AppUserService appUserService;
     private final EmailValidator emailValidator;
+    private final ConfirmationTokenService confirmationTokenService;
 
     public String register(RegistrationRequest request) {
         boolean isValidEmail = emailValidator
@@ -30,4 +32,8 @@ public class RegistrationService {
                 )
         );
     }
+
+//    public String confirmToken(String token) {
+//        confirmationToken
+//    }
 }
