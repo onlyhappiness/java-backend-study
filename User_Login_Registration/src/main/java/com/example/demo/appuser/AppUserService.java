@@ -56,11 +56,14 @@ public class AppUserService implements UserDetailsService {
                 appUser
         );
 
-        confirmationTokenService.saveConfirmation(
-                confirmationToken
-        );
+        confirmationTokenService.saveConfirmationToken(
+                confirmationToken);
 
         // 이메일 보내기
         return token;
+    }
+
+    public int enableAppUser(String email) {
+        return appUserRepository.enableAppUser(email);
     }
 }

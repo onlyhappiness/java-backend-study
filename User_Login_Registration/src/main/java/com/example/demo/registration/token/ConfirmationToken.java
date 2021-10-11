@@ -24,7 +24,6 @@ public class ConfirmationToken {
             strategy = GenerationType.SEQUENCE,
             generator = "confirmation_token_sequence"
     )
-
     private Long id;
 
     @Column(nullable = false)
